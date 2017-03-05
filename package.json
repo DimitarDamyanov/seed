@@ -13,8 +13,10 @@
     "gulp-tslint": "^7.1.0",
     "gulp-typescript": "^3.1.5",
     "gulp-watch": "^4.3.11",
+    "gulp-webdav-sync": "^1.0.4",
     "merge2": "^1.0.3",
     "run-sequence": "^1.2.2",
+    "tslint": "^4.5.1",
     "typescript": "^2.2.1",
     "typings": "^2.1.0"
   }
