@@ -6,6 +6,10 @@ var tsProject = ts.createProject({
     declaration: true
 });
 
+var testProject = ts.createProject({
+    declaration: true
+});
+
 gulp.task('default', function () {
 });
 
@@ -23,6 +27,19 @@ gulp.task('ts:compile', function() {
         tsResult.js.pipe(gulp.dest('./dist'))
     ]);
 });
-gulp.task('watch', ['ts:compile'], function() {
+
+gulp.task('ts:compile-specs', function() {
+    var tsResult = gulp.src('./spec/**/*.ts')
+        .pipe(testProject());
+
+    return merge([
+        tsResult.js.pipe(gulp.dest('./spec'))
+    ]);
+});
+
+
+
+gulp.task('watch', ['ts:compile', 'ts:compile-specs'], function() {
     gulp.watch('./src/**/*.ts', ['ts:compile']);
+    gulp.watch('./spec/**/*.ts', ['ts:compile-specs']);
 }); 

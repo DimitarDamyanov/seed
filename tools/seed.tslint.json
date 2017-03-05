@@ -1,7 +1,8 @@
 {
   "rules": {
     "class-name": true,
-    "curly": false,
+    "comment-format": [true, "check-space"],
+    "curly": true /*Enforces braces for if/for/do/while statements*/,
     "eofline": true,
     "indent": [true, "spaces"],
     "max-line-length": [true, 140],
